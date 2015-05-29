@@ -10,12 +10,15 @@ Install  Docker and [io.js](https://iojs.org) (Node.js, but with bigger and fast
 ````bash
 # Install Docker:
 curl -sSL https://get.docker.com/ | sh
+servicectl enable docker # See https://github.com/docker/docker/issues/12002#issuecomment-106759295
 
 # Install io.js:
 wget https://iojs.org/dist/v2.1.0/iojs-v2.1.0-linux-x64.tar.xz
 tar -xf ./iojs-v2.1.0-linux-x64.tar.xz
 rsync -a iojs-v2.1.0-linux-x64/ /usr/local/
 ````
+
+There seems to be a problem where the docker service does not start after reboot on Ubuntu 15.04.
 
 Now, install [snickers-proxy](https://github.com/michielbdejong/snickers-proxy), configure the sites you want to host.
 
@@ -28,7 +31,7 @@ I recommend using a tool like pm2:
 npm install -g pm2
 sudo su
 pm2 start snickers.js
-pm2 startup
+pm2 startup systemd # See https://github.com/Unitech/PM2/issues/1319
 pm2 list
 ````
 ## Configuring failover
