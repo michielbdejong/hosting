@@ -18,8 +18,6 @@ tar -xf ./iojs-v2.1.0-linux-x64.tar.xz
 rsync -a iojs-v2.1.0-linux-x64/ /usr/local/
 ````
 
-There seems to be a problem where the docker service does not start after reboot on Ubuntu 15.04.
-
 Now, install [snickers-proxy](https://github.com/michielbdejong/snickers-proxy), configure the sites you want to host.
 
 ## Running snickers-proxy
