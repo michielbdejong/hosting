@@ -19,6 +19,18 @@ rsync -a iojs-v2.1.0-linux-x64/ /usr/local/
 
 Now, install [snickers-proxy](https://github.com/michielbdejong/snickers-proxy), configure the sites you want to host.
 
+## Running snickers-proxy
+
+To make sure a node process keeps running on the server after you log out and restart the server,
+I recommend using a tool like pm2:
+
+````bash
+npm install -g pm2
+sudo su
+pm2 start snickers.js
+pm2 startup
+pm2 list
+````
 ## Configuring failover
 
 For static sites, use DNS round-robin to host them on at least two servers.
