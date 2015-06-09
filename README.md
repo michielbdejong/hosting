@@ -10,7 +10,7 @@ Install  Docker and [io.js](https://iojs.org) (Node.js, but with bigger and fast
 ````bash
 # Install Docker:
 curl -sSL https://get.docker.com/ | sh
-servicectl enable docker # See https://github.com/docker/docker/issues/12002#issuecomment-106759295
+systemctl enable docker # See https://github.com/docker/docker/issues/12002#issuecomment-106759295
 
 # Install io.js:
 wget https://iojs.org/dist/v2.1.0/iojs-v2.1.0-linux-x64.tar.xz
